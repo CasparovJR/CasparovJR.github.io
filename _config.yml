@@ -24,7 +24,7 @@ author:
 
 # Url settings
 url: ""
-baseurl:""
+baseurl: ""
 permalink: /:title/
 google_analytics:
 fb_appid:
