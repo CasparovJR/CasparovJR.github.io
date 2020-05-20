@@ -1,5 +1,5 @@
 # main text of home
-name: John Doe
+name: Samuel Merren
 bio: Computer Science Student at Monash University
 
 # twitter summary info
@@ -16,7 +16,7 @@ resume: false
 resume-external: false
 resume-url: https://google.com/?q=my+resume
 
-url: https://casparov.github.io
+url: https://casparovjr.github.io
 # your url: https://USERNAME.github.io
 
 permalink: /:title/
