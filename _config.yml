@@ -13,11 +13,8 @@ mode: dark # default theme "dark" | "light"
 author:
   name: Samuel Merren
   bio: >-
-    Welcome! My name is Sam Merren, i'm a C/C++/Java/Python developer and Software
-    Security enthusiast from Melbourne, currently studying Computer Science at Monash University. 
-    This Website contains everything I have been working on since 2020, a blog for anything 
-    interesting I might want to write about (mainly CTF writeups), and any project showcases i'd
-    like to display. <a href="https://github.com/CasparovJR" target="_blank" rel="noopener">@github</a>.
+    Welcome to my Blog! Here I talk about all things Programming and Cyber Security. \n
+    <a href="https://github.com/CasparovJR" target="_blank" rel="noopener">@github</a>.
   username: username
   email: your-email@email.com
   avatar: /assets/img/avatar.jpg
