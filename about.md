@@ -26,5 +26,5 @@ layout: page
 <h2>Projects</h2>
 
 <ul>
-	<li>Currently no projects<li>
+	<li>Currently no projects</li>
 </ul>
