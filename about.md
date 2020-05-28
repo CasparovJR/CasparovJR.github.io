@@ -20,7 +20,7 @@ layout: page
 	<li>Git</li>
 	<li>PHP</li>
 	<li>MySQL</li>
-	<li>Security Research<li>
+	<li>Security Research</li>
 </ul>
 
 <h2>Projects</h2>
