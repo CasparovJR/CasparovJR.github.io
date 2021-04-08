@@ -23,7 +23,35 @@ I had the pleasure of participating in the 2021 ångstromCTF, and within it, the
 
 To begin, as per usual for any web challenge I immediately looked at the source code, html code and the game itself. A few moments later it's safe to say that this challenge is an XSS challenge, due to this section inside the source code:
 
-<img class="image" src="/assets/images/nomnomnomxss.PNG">
+```javascript
+return res.send(`
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv='Content-Security-Policy' content="script-src 'nonce-${nonce}'">
+		<title>snek nomnomnom</title>
+	</head>
+	<body>
+		${extra}${extra ? '<br /><br />' : ''}
+		<h2>snek goes <em>nomnomnom</em></h2><br />
+		Check out this score of ${score}! <br />
+		<a href='/'>Play!</a> <button id='reporter'>Report.</button> <br />
+		<br />
+		This score was set by ${name}
+		<script nonce='${nonce}'>
+function report() {
+	fetch('/report/${req.params.shareName}', {
+		method: 'POST'
+	});
+}
+
+document.getElementById('reporter').onclick = () => { report() };
+		</script> 
+		
+	</body>
+</html>`);
+});
+```
 
 The game allows you to manually enter your own name within the browser window here, which provides an xss vector via the name variable. Any HTML tags inserted as name will be treated as actual HTML code!
 
