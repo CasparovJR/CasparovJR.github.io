@@ -23,7 +23,7 @@ I had the pleasure of participating in the 2021 ångstromCTF, and within it, the
 
 To begin, as per usual for any web challenge I immediately looked at the source code, html code and the game itself. A few moments later it's safe to say that this challenge is an XSS challenge, due to this section inside the source code:
 
-&nbsp;<img class="image" src="/assets/images/nomnomnomxss.PNG">&nbsp;
+<img class="image" src="/assets/images/nomnomnomxss.PNG">
 
 The game allows you to manually enter your own name within the browser window here, which provides an xss vector via the name variable. Any HTML tags inserted as name will be treated as actual HTML code!
 
@@ -58,7 +58,7 @@ document.getElementById('reporter').onclick = () => { report() }
 	</body>
 </html>
 ```
-<img class = "image" src="/assets/images/nomnomnomnonce2.PNG">&nbsp;
+<img class = "image" src="/assets/images/nomnomnomnonce2.PNG">
 
 That was until I found out that unfinished script tags ate (haha! nom'd) the script tag that was below it. The good thing about this is that it meant I could inject javascript code into the `<script src>` attribute with the nonce as the attribute of it, due to firefox being very weird with a topic called Dangling Markup.
 
