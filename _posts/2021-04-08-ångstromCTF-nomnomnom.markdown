@@ -31,7 +31,33 @@ The game allows you to manually enter your own name within the browser window he
 
 It took quite a while to find the solution for this challenge, and I started to go down an iframe rabbit hole. The main problem was the fact there was a `CSP (Content Security Policy)` that was blocking every script tag I provided because it required the usage of a randomly generated `nonce` as an attribute.
 
-&nbsp;<img class = "image" src="/assets/images/nomnomnomnonce.PNG">
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv='Content-Security-Policy' content="script-src 'nonce-a03da7bf8449792432c9623fa0644875'">
+		<title>snek nomnomnom</title>
+	</head>
+	<body>
+		
+		<h2>snek goes <em>nomnomnom</em></h2><br />
+		Check out this score of 1! <br />
+		<a href='/'>Play!</a> <button id='reporter'>Report.</button> <br />
+		<br />
+		This score was set by <script>alert(1)</script>
+		<script nonce='a03da7bf8449792432c9623fa0644875'>
+function report() {
+	fetch('/report/62231e1a14a18abb', {
+		method: 'POST'
+	})
+}
+
+document.getElementById('reporter').onclick = () => { report() }
+		</script> 
+		
+	</body>
+</html>
+```
 <img class = "image" src="/assets/images/nomnomnomnonce2.PNG">&nbsp;
 
 That was until I found out that unfinished script tags ate (haha! nom'd) the script tag that was below it. The good thing about this is that it meant I could inject javascript code into the `<script src>` attribute with the nonce as the attribute of it, due to firefox being very weird with a topic called Dangling Markup.
