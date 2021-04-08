@@ -118,4 +118,4 @@ Once you have done that, your webhook.site should have recieved a request with t
 
 <img class = "image" src="/assets/images/sol.PNG">
 
-Special thanks to Clanger and Feldma from my team for helping me with this challenge for a long time. This challenge ended up taking me a good 2 days due to my lack of knowledge about Dangling Markup. But it was still incredibly fun none-the-less!
+Special thanks to Clanger and Omri from my team for helping me with this challenge for a long time. This challenge ended up taking me a good 2 days due to my lack of knowledge about Dangling Markup. But it was still incredibly fun none-the-less!
