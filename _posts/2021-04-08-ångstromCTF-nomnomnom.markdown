@@ -1,29 +1,29 @@
 ---
-title: "2021 ångstromCTF 'nomnomnom' Challenge"
+title: "2021 ångstromCTF - nomnomnom Challenge"
 layout: post
 date: 2021-08-04 11:25
 image: /assets/images/favicon/apple-touch-icon-76x76.png
 headerImage: false
 tag:
-- markdown
-- components
-- extra
+- CTF
+- Web
+- Dangling Markup
 category: blog
 author: Casparov
 description: Writeup for the nomnomnom Web challenge in the 2021 ångstromCTF.
 ---
 
 
-## <u>__The Challenge__</u>
-I had the pleasure of participating in the 2021 ångstromCTF, and within it, the challenge I ended up enjoying the most was:\
-&nbsp;
-<img class="image" src="./Images/nomnomnom.png">
+## <u> The Challenge </u>
+I had the pleasure of participating in the 2021 ångstromCTF, and within it, the challenge I ended up enjoying the most was:
+
+&nbsp;<img class="image" src="/assets/images/nomnomnom.PNG">
 
 ## <u> Analysis </u>
 
 To begin, as per usual for any web challenge I immediately looked at the source code, html code and the game itself. A few moments later it's safe to say that this challenge is an XSS challenge, due to this section inside the source code:
 
-&nbsp;<img class="image" src="./Images/nomnomnomxss.png">&nbsp;
+&nbsp;<img class="image" src="/assets/images/nomnomnomxss.PNG">&nbsp;
 
 The game allows you to manually enter your own name within the browser window here, which provides an xss vector via the name variable. Any HTML tags inserted as name will be treated as actual HTML code!
 
@@ -31,8 +31,8 @@ The game allows you to manually enter your own name within the browser window he
 
 It took quite a while to find the solution for this challenge, and I started to go down an iframe rabbit hole. The main problem was the fact there was a `CSP (Content Security Policy)` that was blocking every script tag I provided because it required the usage of a randomly generated `nonce` as an attribute.
 
-&nbsp;<img class = "image" src="./Images/nomnomnomnonce.png">
-<img class = "image" src="./Images/nomnomnomnonce2.png">&nbsp;
+&nbsp;<img class = "image" src="/assets/images/nomnomnomnonce.PNG">
+<img class = "image" src="/assets/images/nomnomnomnonce2.PNG">&nbsp;
 
 That was until I found out that unfinished script tags ate (haha! nom'd) the script tag that was below it. The good thing about this is that it meant I could inject javascript code into the `<script src>` attribute with the nonce as the attribute of it, due to firefox being very weird with a topic called Dangling Markup.
 
@@ -57,10 +57,10 @@ function report() {
 }
 ```
 
-&nbsp;<img class = "image" src="./Images/report.png">&nbsp;
+&nbsp;<img class = "image" src="/assets/images/report.PNG">&nbsp;
 
 Once you have done that, your webhook.site should have recieved a request with the flag in it!
 
-<img class = "image" src="./Images/sol.png">
+<img class = "image" src="/assets/images/sol.PNG">
 
 Special thanks to Clanger and Feldma from my team for helping me with this challenge for a long time. This challenge ended up taking me a good 2 days due to my lack of knowledge about Dangling Markup. But it was still incredibly fun none-the-less!
