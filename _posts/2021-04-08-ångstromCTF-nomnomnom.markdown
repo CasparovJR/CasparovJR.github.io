@@ -17,7 +17,7 @@ description: Writeup for the nomnomnom Web challenge in the 2021 ångstromCTF.
 ## <u> The Challenge </u>
 I had the pleasure of participating in the 2021 ångstromCTF, and within it, the challenge I ended up enjoying the most was:
 
-&nbsp;<img class="image" src="/assets/images/nomnomnomLanding.PNG">
+<img class="image" src="/assets/images/nomnomnomLanding.PNG">
 
 ## <u> Analysis </u>
 
