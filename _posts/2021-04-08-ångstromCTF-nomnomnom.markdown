@@ -8,6 +8,7 @@ tag:
 - CTF
 - Web
 - Dangling Markup
+- ångstromCTF
 category: blog
 author: Casparov
 description: Writeup for the nomnomnom Web challenge in the 2021 ångstromCTF.
