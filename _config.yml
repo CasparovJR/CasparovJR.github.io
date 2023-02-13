@@ -41,7 +41,7 @@ twitter: Sam_Merren
 linkedin: sam-merren-a93284151
 # youtube: myyoutube
 # spotify: myspotify
-github: CasparovJR
+github: 3adncdak
 # gitlab: mygitlab
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
@@ -117,7 +117,7 @@ plugins:
   - jekyll-paginate-v2
 
 jekyll-mentions:
-  base_url: https://github.com
+  base_url: https://tinyurl.com
 
 compress_html:
   ignore:
